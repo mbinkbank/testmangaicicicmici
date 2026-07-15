@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* ── Light theme tokens ─────────────────────────────── */
+:root {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --bg-page: #F7F7F6;
+  --bg-surface: #FFFFFF;
+  --bg-surface-alt: #F0F1F2;
+  --bg-input: #F0F1F2;
+  --bg-hover: #F0F1F2;
+  --bg-active: #E5E7EB;
+
+  --text-primary: #242424;
+  --text-secondary: #57606A;
+  --text-tertiary: #8B949E;
+  --text-muted: #404044;
+
+  --border: #E5E7EB;
+  --accent: #0070F3;
+  --accent-ring: rgba(0, 112, 243, 0.10);
+
+  --btn-bg: #242424;
+  --btn-bg-hover: #1A1A1A;
+  --btn-text: #FFFFFF;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: #E5E7EB;
+
+  --badge-bg: #E5E7EB;
+  --badge-text: #404044;
+
+  --card-bg: #FFFFFF;
+  --card-border: #E5E7EB;
+
+  --bookmark-bg: #FFFFFF;
+  --bookmark-shadow: rgba(0, 0, 0, 0.14);
+
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --shadow-hover: rgba(0, 0, 0, 0.08);
+  --shadow-lg: rgba(0, 0, 0, 0.12);
+  --shadow-xl: rgba(0, 0, 0, 0.15);
+
+  --overlay: rgba(0, 0, 0, 0.45);
+  --dialog-bg: #FFFFFF;
+  --dialog-shadow: rgba(0, 0, 0, 0.15);
+
+  --header-bg: rgba(255, 255, 255, 0.95);
+
+  color: var(--text-primary);
+  background: var(--bg-page);
+}
+
+/* ── Dark theme tokens ──────────────────────────────── */
+.dark {
+  --bg-page: #0C0D10;
+  --bg-surface: #16171B;
+  --bg-surface-alt: #1E2025;
+  --bg-input: #1E2025;
+  --bg-hover: #25272D;
+  --bg-active: #2D2F36;
+
+  --text-primary: #E2E4E9;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
+  --text-muted: #C9CDD3;
+
+  --border: #2A2C33;
+  --accent: #4C9BF5;
+  --accent-ring: rgba(76, 155, 245, 0.15);
+
+  --btn-bg: #E2E4E9;
+  --btn-bg-hover: #FFFFFF;
+  --btn-text: #0C0D10;
+  --btn-secondary-bg: transparent;
+  --btn-secondary-border: #2A2C33;
+
+  --badge-bg: #25272D;
+  --badge-text: #9CA3AF;
+
+  --card-bg: #16171B;
+  --card-border: #2A2C33;
+
+  --bookmark-bg: #1E2025;
+  --bookmark-shadow: rgba(0, 0, 0, 0.45);
+
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --shadow-hover: rgba(0, 0, 0, 0.35);
+  --shadow-lg: rgba(0, 0, 0, 0.45);
+  --shadow-xl: rgba(0, 0, 0, 0.55);
+
+  --overlay: rgba(0, 0, 0, 0.65);
+  --dialog-bg: #16171B;
+  --dialog-shadow: rgba(0, 0, 0, 0.55);
+
+  --header-bg: rgba(22, 23, 27, 0.92);
+
+  color-scheme: dark;
+}
+
+/* ── Base resets ────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+/* Theme transition for major surfaces */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.25s ease, box-shadow 0.3s ease !important;
+}
+
+/* Hide scrollbar for horizontal scroll rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
